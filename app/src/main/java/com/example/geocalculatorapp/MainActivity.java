@@ -26,10 +26,15 @@ public class MainActivity extends AppCompatActivity {
         final EditText lat2 = findViewById(R.id.lat2);
         final EditText long1 = findViewById(R.id.long1);
         final EditText long2 = findViewById(R.id.long2);
-        lat1.setText("43.077366");
-        long1.setText("-85.994053");
-        lat2.setText("43.077303");
-        long2.setText("-85.993860");
+        final TextView calDistance = findViewById(R.id.calDistance);
+        final TextView calBearing = findViewById(R.id.calBearing);
+        lat1.setText("");
+        long1.setText("");
+        lat2.setText("");
+        long2.setText("");
+        calDistance.setText("");
+        calBearing.setText("");
+
     }
 
     private void computeValues() {
