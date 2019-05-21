@@ -42,11 +42,24 @@ public class MainActivity extends AppCompatActivity {
         final EditText long1 = findViewById(R.id.long1);
         final EditText long2 = findViewById(R.id.long2);
 
+        if(lat1.getText().toString().isEmpty()) {
+            lat1.setText("0");
+        }
+        if(lat2.getText().toString().isEmpty()) {
+            lat2.setText("0");
+        }
+        if(long1.getText().toString().isEmpty()) {
+            long1.setText("0");
+        }
+        if(long2.getText().toString().isEmpty()) {
+            long2.setText("0");
+        }
+
+
         Double lat1value = Double.parseDouble(lat1.getText().toString());
         Double long1value = Double.parseDouble(long1.getText().toString());
         Double lat2value = Double.parseDouble(lat2.getText().toString());
         Double long2value = Double.parseDouble(long2.getText().toString());
-
 
         Location startPoint = new Location("a");
         Location endPoint = new Location("b");
