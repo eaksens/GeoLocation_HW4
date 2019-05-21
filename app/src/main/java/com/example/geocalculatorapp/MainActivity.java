@@ -2,7 +2,6 @@ package com.example.geocalculatorapp;
 
 import android.content.Intent;
 import android.location.Location;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); //where to get UI from -in this case, it's under layout folder on activity_main.xml
+        setContentView(R.layout.main_activity); //where to get UI from -in this case, it's under layout folder on main_activity.xml
         //toolbar
         Toolbar myToolBar = findViewById(R.id.mainToolbar);
         setSupportActionBar(myToolBar);
