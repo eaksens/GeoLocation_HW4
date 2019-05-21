@@ -1,5 +1,6 @@
 package com.example.geocalculatorapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -24,7 +25,7 @@ public class unitSettingActivity extends AppCompatActivity {
 //        Toolbar toolbar = findViewById(R.id.settingToolBar);
 //        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.unitSelection);
+        FloatingActionButton fab = findViewById(R.id.fab);
 
         //define the spinner
         Spinner distanceSpinner = findViewById(R.id.distanceSpinner);
@@ -64,11 +65,13 @@ public class unitSettingActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent();
+                String[] units = {disUnit, bearUnit};
+                intent.putExtra("units", units);
+                setResult(MainActivity.UNITS_SELECTION, intent);
+                finish();
             }
         });
-
     }
 
 }
