@@ -1,5 +1,6 @@
 package com.example.geocalculatorapp;
 
+import android.content.Intent;
 import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.support.design.widget.Snackbar;
@@ -9,11 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
-    public static final int VICE_SELECTION = 1;
+    public static final int UNIT_SELECTION = 1;
     //unit variables
     String disUnit = "Miles";
     String bearingUnit = "degrees";
@@ -27,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); //where to get UI from -in this case, it's under layout folder on activity_main.xml
+        //toolbar
+        Toolbar myToolBar = findViewById(R.id.mainToolbar);
+        setSupportActionBar(myToolBar);
 
         //reference to the UI use the findViewById
         final EditText lat1 = findViewById(R.id.lat1);
@@ -39,10 +46,6 @@ public class MainActivity extends AppCompatActivity {
         //display the calculated values
         final TextView calDistance = findViewById(R.id.calDistance);
         final TextView calBearing = findViewById(R.id.calBearing);
-
-        //toolbar
-        Toolbar myToolBar = findViewById(R.id.mainToolbar);
-        setSupportActionBar(myToolBar);
 
         //Press Clear button the all values are clear
         clearBtn.setOnClickListener(v -> {
@@ -84,7 +87,24 @@ public class MainActivity extends AppCompatActivity {
             calBearing.setText(bearingString);
 
         });
-
-
     }
+
+
+    //setup the setting menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        MenuItem settingMenuItem = menu.findItem(R.id.actionSetting);
+
+        settingMenuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(MainActivity.this, unitSettingActivity.class);
+                startActivityForResult(intent,UNIT_SELECTION);
+                return true;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
+    }
+
 }

@@ -9,5 +9,13 @@
     <string name="distance">Distance:</string>
     <string name="bearing">Bearing:</string>
     <string name="title_activity_unit_setting">unitSettingActivity</string>
-    <string name="Settings">Settings</string>
+    <string name="main_menu">Settings</string>
+    <string-array name="distanceUnits">
+        <item>Kilometers</item>
+        <item>Miles</item>
+    </string-array>
+    <string-array name="bearingUnits">
+        <item>Degrees</item>
+        <item>Mils</item>
+    </string-array>
 </resources>

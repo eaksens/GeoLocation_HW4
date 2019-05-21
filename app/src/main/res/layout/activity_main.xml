@@ -42,7 +42,7 @@
         android:id="@+id/long1"
         android:layout_width="159dp"
         android:layout_height="46dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="12dp"
         android:ems="10"
         android:hint="@string/enter_longitude_for_p1"
@@ -69,21 +69,23 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/calculate"
+        app:layout_constraintBottom_toTopOf="@+id/distanceLabel"
         app:layout_constraintEnd_toStartOf="@+id/clearBtn"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lat2" />
+        app:layout_constraintTop_toBottomOf="@+id/lat2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/clearBtn"
         android:layout_width="95dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="148dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="172dp"
         android:text="@string/clear"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/long2" />
+        tools:layout_editor_absoluteY="207dp" />
 
     <TextView
         android:id="@+id/distanceLabel"
